@@ -1,7 +1,7 @@
 ///
 /// Generates cross-browser-compatible `box-shadow` for a given element.
 ///
-/// @author drublic
+/// @author drublic, x404
 ///
 /// @link http://caniuse.com/css-boxshadow caniuse
 /// @link http://www.w3.org/TR/css3-background/#the-box-shadow spec
@@ -16,10 +16,10 @@
 ///
 /// @example
 ///   .selector {
-///     @include x-box-shadow(5px 5px 10px 5px #aaa);
+///     @include drop-shadow(5px 5px 10px 5px 0.3);
 ///   }
 ///
-@mixin x-box-shadow ($values...) {
-	-webkit-box-shadow: $values; // iOS Safari 3.2 - 4.3, Android 2.1+
-	        box-shadow: $values;
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+	-webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
 }
