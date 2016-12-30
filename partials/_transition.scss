@@ -1,7 +1,7 @@
 ///
 /// Generates cross-browser-compatible `transition` output for a given element.
 ///
-/// @author drublic
+/// @author drublic, x404
 ///
 /// @link http://caniuse.com/css-transitions caniuse
 /// @link http://www.w3.org/TR/css3-transitions spec
@@ -16,10 +16,10 @@
 ///
 /// @example
 ///   .selector {
-///     @include x-transition(background 0.3s ease-in);
+///     @include transition(0.3s ease-out);
 ///   }
 ///
-@mixin x-transition ($values...) {
-	-webkit-transition: $values;
-	        transition: $values;
+@mixin transition($duration:0.2s, $ease:ease-out) {
+	-webkit-transition: all $duration $ease;
+	transition: all $duration $ease;
 }
