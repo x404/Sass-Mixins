@@ -1,0 +1,6 @@
+// mixin transform see at _transform.scss
+
+
+@mixin rotation($deg:5deg){
+	@include transform(rotate($deg));
+}
